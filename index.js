@@ -1,178 +1,160 @@
 // ** Problem 1: Reverse a String **
-
-const reverseString = (inputStr) => {
-    const characters = inputStr.split('');
-    const reversedCharacters = characters.reverse().join('');
-    return reversedCharacters;
+const reverseString = (str) => {
+    const chars = str.split('')
+    const reversed = chars.reverse().join('')
+    return reversed
 }
 
-const reversedResult = reverseString('hello');
-// console.log(reversedResult);
+const result1 = reverseString('hello')
+// console.log(result1)
 
 
 // ** Problem 2: Count Vowels in a String **
-
-const countVowels = (inputString) => {
-    const characters = inputString.split('');
+const countVowels = (str) => {
+    const chars = str.split('');
     let vowelCount = 0;
     const vowelList = ['a', 'e', 'i', 'o', 'u'];
-
-    for (let i = 0; i < characters.length; i++) {
-        if (vowelList.includes(characters[i].toLowerCase())) {
-            vowelCount++;
+    for (let i = 0; i < chars.length; i++) {
+        if (vowelList.includes(chars[i].toLowerCase())) {
+            vowelCount++
         }
     }
-
-    return vowelCount;
+    return vowelCount
 }
 
-const totalVowels = countVowels('programmingo');
-// console.log(totalVowels);
+const result2 = countVowels('programmingo');
+// console.log(result2)
 
 
-// ** Problem 3: Check for Palindrome ** const isPalindrome = (text) => {
-    const originalText = text;
-    const reversedText = text.split('').reverse().join('');
-    const isMatch = originalText === reversedText;
-
-    return isMatch;
+// ** Problem 3: Check for Palindrome **
+const isPalindrome = (str) => {
+    const original = str;
+    const reversed = str.split('').reverse().join('');
+    const isValid = original === reversed;
+    return isValid
 }
 
-const palindromeCheck = isPalindrome('madam');
-// console.log(palindromeCheck);
+const result3 = isPalindrome('madam')
+// console.log(result3);
 
 
 // ** Problem 4: Find the Maximum Number **
-
-const findMaxNumber = (numbersArray) => {
-    let maxVal = [0]; // Kept as [0] to match your original logic
-
-    for (let i = 0; i < numbersArray.length; i++) {
-        if (numbersArray[i] > maxVal) {
-            maxVal = numbersArray[i];
+const findMax = (arr) => {
+    let maximum = [0];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > maximum) {
+            maximum = arr[i]
         }
     }
-
-    return maxVal;
+    return maximum
 };
 
-const maxNumResult = findMaxNumber([3, 5, 6, 9, 29]);
-// console.log(maxNumResult);
+const result4 = findMax([3, 5, 6, 9, 29]);
+// console.log(result4)
 
 
 // ** Problem 5: Remove Duplicates from an Array **
-
-const removeDuplicates = (inputArray) => {
-    const numbers = inputArray;
+const removeDuplicates = (arr) => {
+    const items = arr;
     let uniqueItems = [];
-
-    for (let i = 0; i < numbers.length; i++) {
-        if (!uniqueItems.includes(numbers[i])) {
-            uniqueItems.push(numbers[i]);
+    for (let i = 0; i < items.length; i++) {
+        if (!uniqueItems.includes(items[i])) {
+            uniqueItems.push(items[i])
         }
     }
-
-    return uniqueItems;
+    return uniqueItems
 }
 
-const cleanArray = removeDuplicates([1, 2, 2, 3, 4, 4]);
-// console.log(cleanArray);
+const result5 = removeDuplicates([1, 2, 2, 3, 4, 4])
+// console.log(result5)
 
 
 // ** Problem 6: Sum of All Numbers in an Array **
-
-const calculateSum = (numbers) => {
-    const numsArray = numbers;
-    let totalSum = 0;
-
-    for (let i = 0; i < numsArray.length; i++) {
-        totalSum = totalSum + numsArray[i];
+const sumArray = (arr) => {
+    const items = arr;
+    let total = 0;
+    for (let i = 0; i < items.length; i++) {
+        total = total + items[i];
     }
-
-    return totalSum;
+    return total;
 };
 
-const sumResult = calculateSum([1, 2, 3, 4]);
-// console.log(sumResult);
+const result6 = sumArray([1, 2, 3, 4]);
+// console.log(result6)
 
 
 // ** Problem 7: Find Even Numbers in an Array **
+/*
+Write a function that returns all even numbers from a given array.
+Example:
+Input: [1, 2, 3, 4, 5, 6]
+Output: [2, 4, 6]
+*/
 
-const getEvenNumbers = (numbersList) => {
-    const inputNumbers = numbersList;
-    const evenNumbersArray = [];
-
-    for (let i = 0; i < inputNumbers.length; i++) {
-        if (inputNumbers[i] % 2 == 0) {
-            evenNumbersArray.push(inputNumbers[i]);
+const findEvenNumbers = (arr) => {
+    const items = arr;
+    const evenNumbers = [];
+    for (let i = 0; i < items.length; i++) {
+        if (items[i] % 2 == 0) {
+            evenNumbers.push(items[i])
         }
     }
-
-    return evenNumbersArray;
+    return evenNumbers
 };
 
-const evenResult = getEvenNumbers([1, 2, 3, 4, 5, 6]);
-// console.log(evenResult);
+const result7 = findEvenNumbers([1, 2, 3, 4, 5, 6]);
+// console.log(result7)
 
 
 // ** Problem 8: Capitalize First Letter of Each Word **
-
-const capitalizeWords = (sentence) => {
-    const words = sentence.split(' ');
-    const capitalizedList = [];
-
+const capitalizeWords = (str) => {
+    const words = str.split(' ')
+    const capitalizedWords = []
     for (let i = 0; i < words.length; i++) {
-        const word = words[i];
-        const formattedWord = word[0].toUpperCase() + word.slice(1);
-        capitalizedList.push(formattedWord);
+        const word = words[i]
+        const capitalized = word[0].toUpperCase() + word.slice(1)
+        capitalizedWords.push(capitalized)
     }
-
-    return capitalizedList.join(' ');
+    return capitalizedWords.join(' ')
 };
 
-const upperCaseResult = capitalizeWords('hello world');
-// console.log(upperCaseResult);
+const result8 = capitalizeWords('hello world');
+// console.log(result8)
 
 
 // ** Problem 9: Find the Factorial of a Number **
-
-const calculateFactorial = (n) => {
-    const targetNum = n;
-    let factorialResult = 1;
-
-    for (let i = 1; i <= targetNum; i++) {
+const calculateFactorial = (num) => {
+    const number = num;
+    let factorialResult = 1
+    for (let i = 1; i <= number; i++) {
         factorialResult = factorialResult * i;
     }
-
-    return factorialResult;
+    return factorialResult
 };
 
-const factResult = calculateFactorial(5);
-// console.log(factResult);
+const result9 = calculateFactorial(5)
+// console.log(result9)
 
 
 // ** Problem 10: PingPong Challenge **
-
-const runPingPong = (limit) => {
-    const pingPongResults = [];
-
-    for (let i = 1; i <= limit; i++) {
+const pingPongChallenge = (count) => {
+    const output = []
+    for (let i = 1; i <= count; i++) {
         if (i % 3 === 0 && i % 5 === 0) {
-            pingPongResults.push("PingPong");
-        } 
+            output.push("PingPong");
+        }
         else if (i % 3 == 0) {
-            pingPongResults.push('Ping');
-        } 
+            output.push('Ping')
+        }
         else if (i % 5 == 0) {
-            pingPongResults.push('Pong');
-        } 
+            output.push('Pong')
+        }
         else {
-            pingPongResults.push(i);
+            output.push(i)
         }
     }
-
-    return pingPongResults.join(',');
+    return output.join(',')
 }
 
-const finalPingPongResult = runPingPong(20);
-// console.log(finalPingPongResult);
+const result10 = pingPongChallenge(20)
+console.log(result10)
