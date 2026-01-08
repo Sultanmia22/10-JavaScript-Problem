@@ -22,7 +22,7 @@ const countVowels = (str) => {
     return vowelCount
 }
 
-const result2 = countVowels('programmingo');
+const result2 = countVowels('programming');
 // console.log(result2)
 
 
@@ -157,4 +157,4 @@ const pingPongChallenge = (count) => {
 }
 
 const result10 = pingPongChallenge(20)
-console.log(result10)
+// console.log(result10)
